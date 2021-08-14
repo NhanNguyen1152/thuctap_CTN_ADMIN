@@ -1,0 +1,189 @@
+@model IEnumerable<thuctap_CTN_NEW.Models.Hocvien>
+
+@* @{
+    ViewData["Title"] = "Index";
+    }
+
+    <h1>Index</h1>
+
+    <p>
+    <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+    <thead>
+    <tr>
+    <th>
+    @Html.DisplayNameFor(model => model.HvTen)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.HvNgaysinh)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.HvGioitinh)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.HvDiachi)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.HvSdt)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.HvEmail)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.HvNgayvao)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.HvHinhanh)
+    </th>
+
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+    <tr>
+    <td>
+    @Html.DisplayFor(modelItem => item.HvTen)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.HvNgaysinh)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.HvGioitinh)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.HvDiachi)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.HvSdt)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.HvEmail)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.HvNgayvao)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.HvHinhanh)
+    </td>
+
+    <td>
+    <a asp-action="Edit" asp-route-id="@item.HvId">Edit</a> |
+    <a asp-action="Details" asp-route-id="@item.HvId">Details</a> |
+    <a asp-action="Delete" asp-route-id="@item.HvId">Delete</a>
+    </td>
+    </tr>
+    }
+    </tbody>
+    </table> *@
+
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="table-agile-info">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            HỌC VIÊN <a asp-action="Create" style="font-size: 80%">- Thêm Học Viên</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped b-t b-light">
+                <form asp-controller="Sanphams" asp-action="Index" asp-route-ten="SpTen">
+                    <p>
+                        <input type="text" name="ten">
+                        <input type="submit" value="Filter" />
+                    </p>
+                </form>
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HvTen)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HvNgaysinh)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HvGioitinh)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HvDiachi)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HvSdt)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HvEmail)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HvNgayvao)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HvHinhanh)
+                        </th>
+
+                        <th>Tùy Chọn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HvTen)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HvNgaysinh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HvGioitinh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HvDiachi)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HvSdt)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HvEmail)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HvNgayvao)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HvHinhanh)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.HvId" class="btn-color-green "><i
+                                    class="fa fa-minus"></i></a> |
+                                <a asp-action="Delete" asp-route-id="@item.HvId" class="btn-color-red "><i
+                                    class="fa fa-trash"></i></a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+
+                <div class="col-sm-5 text-center">
+                    <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+                </div>
+                <div class="col-sm-7 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-none m-b-none">
+                        <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+                        <li><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                        <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

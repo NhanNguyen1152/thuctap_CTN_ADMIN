@@ -1,0 +1,140 @@
+@model thuctap_CTN_NEW.Models.Lop
+
+@* @{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Lop</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LId" class="control-label"></label>
+                <input asp-for="LId" class="form-control" />
+                <span asp-validation-for="LId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LTen" class="control-label"></label>
+                <input asp-for="LTen" class="form-control" />
+                <span asp-validation-for="LTen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LMota" class="control-label"></label>
+                <input asp-for="LMota" class="form-control" />
+                <span asp-validation-for="LMota" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LKhoa" class="control-label"></label>
+                <input asp-for="LKhoa" class="form-control" />
+                <span asp-validation-for="LKhoa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LNgaybatdau" class="control-label"></label>
+                <input asp-for="LNgaybatdau" class="form-control" />
+                <span asp-validation-for="LNgaybatdau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LNgayketthuc" class="control-label"></label>
+                <input asp-for="LNgayketthuc" class="form-control" />
+                <span asp-validation-for="LNgayketthuc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LTrangthai" class="control-label"></label>
+                <input asp-for="LTrangthai" class="form-control" />
+                <span asp-validation-for="LTrangthai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div> *@
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="col-lg-12">
+    <section class="panel">
+        <header class="panel-heading">
+            THÊM LỚP 
+        </header>
+        <div class="panel-body">
+            <div class="position-center">
+             <form asp-action="Create">
+
+                  <div class="form-group">
+                    <label asp-for="LId" class="col-lg-3 col-sm-2 control-label"></label>
+                    <div class="col-lg-3">
+                    <input asp-for="LId" class="form-control" />
+                    <span asp-validation-for="LId" class="text-danger"></span>
+                    </div>
+                  </div>
+
+                <div class="form-group">
+                    <label asp-for="LTen" class="col-lg-3 col-sm-2 control-label"></label>
+                    <div class="col-lg-3">
+                    <input asp-for="LTen" class="form-control" />
+                    <span asp-validation-for="LTen" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LMota" class="col-lg-3 col-sm-2 control-label"></label>
+                    <div class="col-lg-3">
+                    <input asp-for="LMota" class="form-control"/>
+                    <span asp-validation-for="LMota" class="text-danger"></span>
+                </div>
+
+                 <div class="form-group">
+                    <label asp-for="LKhoa" class="col-lg-3 col-sm-2 control-label"></label>
+                    <div class="col-lg-3">
+                    <input asp-for="LKhoa" class="form-control"/>
+                    <span asp-validation-for="LKhoa" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="LNgaybatdau" class="col-lg-3 col-sm-2 control-label"></label>
+                     <div class="col-lg-3">
+                    <input asp-for="LNgaybatdau" class="form-control"/>
+                    <span asp-validation-for="LNgaybatdau" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="LNgayketthuc" class="col-lg-3 col-sm-2 control-label"></label>
+                     <div class="col-lg-3">
+                    <input asp-for="LNgayketthuc" class="form-control"/>
+                    <span asp-validation-for="LNgayketthuc" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="LTrangthai" class="col-lg-3 col-sm-2 control-label"></label>
+                    <div class="col-lg-3">
+                    <input asp-for="LTrangthai" class="form-control"/>
+                    <span asp-validation-for="LTrangthai" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-5">
+                        <input type="submit" value="Lưu" class="btn btn-primary" />
+                        <button type="button" class="btn" style="background-color: tomato;"><a href="/Lops/Index" style="color: white;background-color: tomato;">Quay Trở Lại</a> </button>
+                    </div>
+                </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+@* 
+  <div class="form-group">
+                    <label asp-for="LTen" class="col-lg-3 col-sm-2 control-label"></label>
+                    <div class="col-lg-3">
+                    <select asp-for="LTen" class ="form-control" asp-items="ViewBag.DmId"></select>
+                    </div>
+                  </div> *@

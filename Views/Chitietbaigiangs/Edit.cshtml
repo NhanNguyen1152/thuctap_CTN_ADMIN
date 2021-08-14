@@ -1,0 +1,45 @@
+@model thuctap_CTN_NEW.Models.Chitietbaigiang
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+        <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                THÊM CHI TIẾT BÀI GIẢNG
+            </header>
+            <div class="panel-body">
+                <form asp-action="Edit" class="form-horizontal bucket-form" method="POST">
+                        <input type="hidden" asp-for="CtbgId" />
+                    <div class="col-md-6 form-group">
+                        <label asp-for="CtbgId" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="CtbgId" class="form-control" readonly = "readonly">
+                        </div>
+                    </div>                    
+                    <div class="col-md-6 form-group">
+                        <label asp-for="LId" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                               <select asp-for="LId" class ="form-control" asp-items="ViewBag.LId"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label asp-for="BgId" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                                <select asp-for="BgId" class ="form-control" asp-items="ViewBag.BgId"></select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <input type="submit" value="Lưu" class="btn btn-primary" />
+                        <button type="button" class="btn" style="background-color: tomato;"><a href="/Chitietbaigiangs/Index" style="color: white;background-color: tomato;">Quay Trở Lại</a> </button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+        </div>
+</div>
+

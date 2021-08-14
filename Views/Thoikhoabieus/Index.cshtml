@@ -1,0 +1,183 @@
+@model IEnumerable<thuctap_CTN_NEW.Models.Thoikhoabieu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@* <h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TkbMonhoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TkbKhunggio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TkbNgaybatdau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TkbNgayketthuc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TkbThu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TkbLinkhoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LIdNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TkbMonhoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TkbKhunggio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TkbNgaybatdau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TkbNgayketthuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TkbThu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TkbLinkhoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hv.HvId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LIdNavigation.LId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TkbId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TkbId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TkbId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+ *@
+
+<div class="table-agile-info">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            THỜI KHÓA BIỂU <a asp-action="Create" style="font-size: 80%">- Thêm Thời Khóa Biểu</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped b-t b-light">
+                <form asp-controller="Thoikhoabieus" asp-action="Index" asp-route-ten="SpTen">
+                    <p>
+                        <input type="text" name="ten">
+                        <input type="submit" value="Filter" />
+                    </p>
+                </form>
+                <thead>
+                    <tr>`
+                        <th>
+                            @Html.DisplayNameFor(model => model.TkbMonhoc)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TkbKhunggio)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TkbNgaybatdau)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TkbNgayketthuc)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TkbThu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TkbLinkhoc)
+                        </th>
+                        <th>
+                            Học viên
+                        </th>
+                        <th>
+                            Lớp
+                        </th>
+
+                        <th>Tùy Chọn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TkbMonhoc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TkbKhunggio)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TkbNgaybatdau)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TkbNgayketthuc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TkbThu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TkbLinkhoc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Hv.HvId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LIdNavigation.LId)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.TkbId" class="btn-color-green "><i
+                                    class="fa fa-minus"></i></a> |
+                                <a asp-action="Delete" asp-route-id="@item.TkbId" class="btn-color-red "><i
+                                    class="fa fa-trash"></i></a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+
+                <div class="col-sm-5 text-center">
+                    <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+                </div>
+                <div class="col-sm-7 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-none m-b-none">
+                        <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+                        <li><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                        <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

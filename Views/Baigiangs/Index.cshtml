@@ -1,0 +1,109 @@
+@model IEnumerable<thuctap_CTN_NEW.Models.Baigiang>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@* <h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BgTen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BgLoai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BgFile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BgTrangthai)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BgTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BgLoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BgFile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BgTrangthai)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BgId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BgId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BgId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@
+
+<div class="table-agile-info">
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                  BÀI GIẢNG <a asp-action="Create" style="font-size: 80%">- Thêm Bài Giảng</a>
+                </div>
+
+        <div class="table-responsive">
+          <table class="table table-striped b-t b-light">
+            <thead>
+              <tr>
+                <th>@Html.DisplayNameFor(model => model.BgTen)</th>
+                <th>@Html.DisplayNameFor(model => model.BgLoai)</th>
+                <th>@Html.DisplayNameFor(model => model.BgFile)</th>
+                <th>@Html.DisplayNameFor(model => model.BgTrangthai)</th>
+                <th>Tùy Chọn</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.BgTen)</td>
+                        <td>@Html.DisplayFor(modelItem => item.BgLoai)</td>
+                        <td>@Html.DisplayFor(modelItem => item.BgFile)</td>
+                        <td>@Html.DisplayFor(modelItem => item.BgTrangthai)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.BgId" class="btn-color-green "><i class="fa fa-minus"></i></a> |
+                            <a asp-action="Delete" asp-route-id="@item.BgId"  class="btn-color-red "><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+          </table>
+        </div>
+        <footer class="panel-footer">
+          <div class="row">
+            
+            <div class="col-sm-5 text-center">
+              <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+            </div>
+            <div class="col-sm-7 text-right text-center-xs">                
+              <ul class="pagination pagination-sm m-t-none m-b-none">
+                <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+                <li><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+

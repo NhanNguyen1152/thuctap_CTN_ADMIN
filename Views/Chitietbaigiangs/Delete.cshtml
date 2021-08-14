@@ -1,0 +1,32 @@
+@model thuctap_CTN_NEW.Models.Chitietbaigiang
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="col-lg-12">
+    <section class="panel">
+        <header class="panel-heading">
+            XÓA CHI TIẾT BÀI GIẢNG
+        </header>
+        <div class="panel-body">
+            <div class="position-center">
+            <form asp-action = "Delete">
+                <h3>
+                     Bạn Có Muốn Xóa Chi Tiết Bài Giảng <b>"@Html.DisplayFor(model => model.CtbgId)"</b> ? 
+                </h3>
+                
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-5">
+                        <input type="hidden" asp-for="CtbgId" />
+                        <input type="submit" value="Xóa" class="btn btn-primary" />
+                        <button type="button" class="btn" style="background-color: tomato;"><a href="/taikhoans/Index" style="color: white;background-color: tomato;">Quay Trở Lại</a> </button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+</div>

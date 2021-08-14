@@ -1,0 +1,42 @@
+@model thuctap_CTN_NEW.Models.Baigiang
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Baigiang</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BgTen)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BgTen)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BgLoai)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BgLoai)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BgFile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BgFile)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BgTrangthai)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BgTrangthai)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.BgId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

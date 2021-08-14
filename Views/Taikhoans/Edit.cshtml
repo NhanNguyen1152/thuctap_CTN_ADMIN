@@ -1,0 +1,53 @@
+@model thuctap_CTN_NEW.Models.Taikhoan
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+        <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                SỬA TÀI KHOẢN
+            </header>
+            <div class="panel-body">
+                <form asp-action="Edit" class="form-horizontal bucket-form" method="POST">
+                    <div class="col-md-6 form-group">
+                        <label asp-for="TkUrn" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="TkUrn" class="form-control" readonly = "readonly">
+                                <span asp-validation-for="TkUrn" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label asp-for="TkId" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="TkId" class="form-control" readonly = "readonly">
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label asp-for="TkPw" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="TkPw" class="form-control" type="password">
+                                <span asp-validation-for="TkPw" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label asp-for="TkPw" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="TkPw" class="form-control" type="password">
+                                <span asp-validation-for="TkPw" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <input type="submit" value="Lưu" class="btn btn-primary" />
+                        <button type="button" class="btn" style="background-color: tomato;"><a href="/Taikhoans/Index" style="color: white;background-color: tomato;">Quay Trở Lại</a> </button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+        </div>
+</div>
+

@@ -1,0 +1,61 @@
+@model thuctap_CTN_NEW.Models.Ad
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+        <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                SỬA GIẢNG VIÊN
+            </header>
+            <div class="panel-body">
+                <form asp-action="Edit" class="form-horizontal bucket-form" method="POST">
+                    <div class="col-md-6 form-group">
+                        <label asp-for="AdUsername" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="AdUsername" class="form-control">
+                                <span asp-validation-for="AdUsername" class="text-danger"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 form-group">
+                        <label asp-for="AdId" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="AdId" class="form-control" readonly = "readonly">
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label asp-for="AdPassword" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="AdPassword" class="form-control" type="password">
+                                <span asp-validation-for="AdPassword" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label asp-for="AdTen" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="AdTen" class="form-control">
+                                <span asp-validation-for="AdTen" class="text-danger"></span>
+                        </div>  
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label asp-for="AdPassword" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="AdPassword" class="form-control" type="password">
+                                <span asp-validation-for="AdPassword" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <input type="submit" value="Lưu" class="btn btn-primary" />
+                        <button type="button" class="btn" style="background-color: tomato;"><a href="/Ads/Index" style="color: white;background-color: tomato;">Quay Trở Lại</a> </button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+        </div>
+</div>
+
